@@ -1,6 +1,5 @@
 # GroupThreeOrca
-This is the repo for CSE490j Wi19 VR course's group project. Haha!
+This is the repo for CSE490j SP19 VR course's group project. 
 
-The final release is here: https://github.com/Rorschachly/GroupThreeOrca/releases
 
-asset_doc: https://docs.google.com/spreadsheets/d/1jg3XLtHY01rFEmUBbhMjwtXUdUDrOWyE0TNTHbSsGKU/edit#gid=0
+Final polish with flippers and animation rig using untiy 2019
