@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Unity/ConstraintSamples/Scenes/damp.unity
+- path: Assets/Unity/ConstraintSamples/Scenes/2BoneIK.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
