@@ -5,15 +5,10 @@ using UnityEngine;
 public class GrabScript : MonoBehaviour
 {
 
-    private bool rightHandtouched = false;
-    private bool leftHandtouched = false;
-    public GameObject rightHandDisable, granny;
-    public GameObject leftHandDisable;
-    private Collider rightHand;
-    private Collider leftHand;
+    //private bool rightHandtouched = false;
+    //private bool leftHandtouched = false;
+    public GameObject righthand,lefthand, granny;
     GameObject fish;
-
-    public Transform leftholder, rightholder;
     // Use this for initialization
     void Start()
     {
@@ -26,18 +21,32 @@ public class GrabScript : MonoBehaviour
     }
     public void celebrate()
     {
-        granny.GetComponent<Granny_Behavior>().chewing.Play();
-        granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
         if (gameObject.CompareTag("Salmon3"))
+        {
             granny.GetComponent<Granny_Behavior>().Clap3();
+            granny.GetComponent<Granny_Behavior>().chewing.Play();
+            granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
+        }
         else if (gameObject.CompareTag("Fish"))
+        {
             granny.GetComponent<Granny_Behavior>().Clap2();
+            granny.GetComponent<Granny_Behavior>().chewing.Play();
+            granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag == "right")
+        {
+           transform.SetParent(other.transform);
+        }
+        else if(other.gameObject.CompareTag("left"))
+        {
+            transform.SetParent(lefthand.transform);
+        }
+        else if (other.gameObject.CompareTag("head"))
         {
             celebrate();
         }

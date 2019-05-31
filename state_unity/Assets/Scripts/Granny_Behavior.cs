@@ -9,9 +9,9 @@ public class Granny_Behavior : MonoBehaviour
 
     // Use this for initialization
     public static FishState fish_st = FishState.CAUGHT;
-
+    public Transform Camera;
     public GameObject salmon, salmon_2, salmon_3, round_fish, will_fish, fishbones, heart, pod, grannydouble, s1,s2 ,r1,w1;
-    public Transform cm, fishpos, playrfishpos;
+    public Transform  fishpos, playrfishpos;
     public ParticleSystem shuffleParticleLauncher;
 
     public ParticleSystem grannyBreath;
@@ -49,9 +49,12 @@ public class Granny_Behavior : MonoBehaviour
     {
         if (isforward)
         {
-            transform.position = Vector3.Lerp(transform.position, cm.position, Time.deltaTime * 0.25f);
-            if (transform.position == cm.position)
+            transform.position = Vector3.Lerp(transform.position, Camera.position, Time.deltaTime * 0.25f);
+            if (Vector3.Distance(transform.position, Camera.position) < 5.8f )
+            {
+                Debug.Log(Vector3.Distance(transform.position, Camera.position));
                 isforward = false;
+            }
         }
     }
 

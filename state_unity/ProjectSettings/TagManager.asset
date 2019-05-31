@@ -5,11 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fish
-  - PlayerRightHand
-  - PlayerLeftHand
   - Salmon3
   - left
   - right
+  - head
   layers:
   - Default
   - TransparentFX

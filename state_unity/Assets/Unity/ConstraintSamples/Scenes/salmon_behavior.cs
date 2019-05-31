@@ -26,12 +26,12 @@ public class salmon_behavior : MonoBehaviour
             if(other.gameObject.tag == "left")
             {
                 Debug.Log("collisionl");
-                this.transform.position = leftPos.position;
+                this.transform.SetParent(other.transform);
             }
             else if(other.gameObject.tag == "right")
             {
                 Debug.Log("collisionr");
-                this.transform.position = rightPos.position;
+                this.transform.SetParent(other.transform);
             }
         }
     }
