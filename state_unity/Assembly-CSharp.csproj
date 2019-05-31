@@ -99,6 +99,9 @@
      <Compile Include="Assets\Scripts\ShowSalmon_behaviour.cs" />
      <Compile Include="Assets\Scripts\WrongFish_Brhaviour.cs" />
      <Compile Include="Assets\startscreen.cs" />
+     <Compile Include="Assets\Unity\ConstraintSamples\Scenes\DampToChain.cs" />
+     <Compile Include="Assets\Unity\ConstraintSamples\Scenes\DC.cs" />
+     <Compile Include="Assets\Unity\ConstraintSamples\Scenes\DCBlend.cs" />
      <Compile Include="Assets\Unity\ConstraintSamples\Scenes\salmon_behavior.cs" />
      <Compile Include="Assets\Unity\ConstraintSamples\Scripts\mParent.cs" />
      <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />

@@ -8,10 +8,14 @@ public class WrongFish_Brhaviour : MonoBehaviour {
     bool startdissolve = false, expand = false;
     public Material mat;
     float dissolve_value;
+    GameObject granny;
+    Animator aniamtor;
+    readonly int wrong = Animator.StringToHash("fish_trigger");
 
     void Start () {
         mat.SetFloat(Shader.PropertyToID("Vector1_B597625B"), -1f);
         dissolve_value = 0;
+        aniamtor = granny.GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -29,28 +33,14 @@ public class WrongFish_Brhaviour : MonoBehaviour {
                 gameObject.SetActive(false);
             }
         }
-        if (expand)
-                transform.localScale += new Vector3(0.01f,0.01f,0.01f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("head"))
         {
-            StartCoroutine("dissolve");
-            expand = true;
+            startdissolve = true;
+            aniamtor.SetTrigger(wrong);
         }
-    }
-
-    //public void OnCollisionEnter(Collision collision)
-    //{
-    //    StartCoroutine("dissolve");
-    //    expand = true;
-    //}
-
-    IEnumerator dissolve()
-    {
-        yield return new WaitForSeconds(0.75f);
-        startdissolve = true;
     }
 }
